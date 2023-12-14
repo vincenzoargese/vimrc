@@ -3,6 +3,7 @@
 """""""""""""""""""""""""""""
 set nocompatible            " Utilizza Vim in modalità avanzata
 set encoding=utf-8          " Imposta l'encoding a UTF-8
+syntax on                   " Abilita il syntax highlighting
 set mouse=a                 " Abilita il supporto per il mouse
 set tabstop=4               " Imposta la larghezza della tabulazione a 4 spazi
 set softtabstop=4           " Imposta la larghezza della tabulazione per il backspace a 4 spazi
@@ -15,7 +16,7 @@ set cursorline              " Evidenzia la riga corrente
 set nowrap                  " Disabilita il wrapping delle righe
 set hlsearch                " Evidenzia le corrispondenze durante la ricerca
 set incsearch               " Evidenzia mentre si digita la ricerca
-syntax on                   " Abilita il syntax highlighting
+syntax enable               " Abilita il syntax highlighting
 set background=dark         " Imposta lo sfondo scuro (cambia a light per sfondi chiari)
 colorscheme desert          " Imposta lo schema di colori (puoi scegliere altri temi)
 
