@@ -1,0 +1,95 @@
+"""""""""""""""""""""""""""""
+" ViM - Impostazioni di base
+"""""""""""""""""""""""""""""
+set nocompatible            " Utilizza Vim in modalità avanzata
+set encoding=utf-8          " Imposta l'encoding a UTF-8
+syntax on                   " Abilita il syntax highlighting
+set mouse=a                 " Abilita il supporto per il mouse
+set tabstop=4               " Imposta la larghezza della tabulazione a 4 spazi
+set softtabstop=4           " Imposta la larghezza della tabulazione per il backspace a 4 spazi
+set shiftwidth=4            " Imposta la larghezza dello spostamento a 4 spazi
+set expandtab               " Usa spazi al posto delle tabulazioni
+set autoindent              " Abilita l'autoindentazione
+set smartindent             " Abilita l'indentazione intelligente
+"set number                  " Mostra il numero delle righe
+set cursorline              " Evidenzia la riga corrente
+set nowrap                  " Disabilita il wrapping delle righe
+set hlsearch                " Evidenzia le corrispondenze durante la ricerca
+set incsearch               " Evidenzia mentre si digita la ricerca
+syntax enable               " Abilita il syntax highlighting
+set background=dark         " Imposta lo sfondo scuro (cambia a light per sfondi chiari)
+colorscheme desert          " Imposta lo schema di colori (puoi scegliere altri temi)
+
+
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+" vim-plug: {{{
+call plug#begin('~/.vim/plugged')
+
+Plug 'OmniSharp/omnisharp-vim'
+
+" Plugin
+Plug 'scrooloose/nerdtree'      " NERDTree
+Plug 'kien/ctrlp.vim'           " CtrlP
+Plug 'vim-airline/vim-airline'  " vim-airline
+Plug 'tpope/vim-fugitive'       " Fugitive
+Plug 'dense-analysis/ale'       " Ale
+Plug 'tpope/vim-surround'       " Surround
+Plug 'SirVer/ultisnips'         " UltiSnips
+Plug 'ycm-core/YouCompleteMe'   " YouCompleteMe
+
+call plug#end()
+
+" Configurazione di OmniSharp
+let g:OmniSharp_server_stdio = 1
+let g:OmniSharp_server_port = 2000
+let g:OmniSharp_logLevel = 0
+
+" Tasti rapidi per le azioni di OmniSharp
+nnoremap <buffer> gd :OmniSharpGotoDefinition<CR>
+nnoremap <buffer> <leader>fu :OmniSharpFindUsages<CR>
+
+filetype plugin indent on       " Abilita i plugin e l'indentazione basata sul tipo di file
+
+"""""""""""""""""""""""""""
+" YouCompleteMe - Settings
+"""""""""""""""""""""""""""
+" Default .ycm_extra_conf.py
+let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
+"
+"let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
+
+" Abilita l'autocompletamento per i linguaggi
+let g:ycm_semantic_triggers = {
+            \ 'c,cpp,java': ['->', '.'],
+            \ 'cs': ['.'],
+            \ 'javascript': ['.', '->'],
+            \ 'python': ['.'],
+            \ 'typescript': ['.'],
+            \ 'sql': ['.'],
+            \ 'mysql': ['.'],
+            \ 'html,html5': ['<', '>'],
+            \ 'sh,zsh': ['.'],
+            \ 'unity3d': ['.'],
+            \ 'MonoBehaviour': ['.'],
+            \ }
+
+autocmd FileType c,cpp,cs,java,javascript,javascript.jsx,typescript,typescript.jsx,phaser3,unity3d,bash,zsh,sql,html,react,reactnative,jsx let g:ycm_semantic_triggers =  {'c,cpp': ['->', '.', ''], 'java': ['.', ''], 'javascript,javascript.jsx,typescript,typescript.jsx,phaser3,unity3d,react,reactnative,jsx': ['.', '']}
+
+" Impostazioni aggiuntive di YouCompleteMe per migliore performance
+let g:ycm_collect_identifiers_from_tags_files = 1
+let g:ycm_complete_in_comments = 1
+let g:ycm_key_invoke_completion = '<C-Space>'
+
+"""""""""""""""""""""""""""
+" Keyboard Maps
+"""""""""""""""""""""""""""
+map <F2> :w<CR>            " Salva il file premendo F2
+map <C-S> :wq<CR>          " Salva e chiudi premendo CTRL+S
+" Python tabs map
+"map <F7> :set expandtab tabstop=4 shiftwidth=4 softtabstop=4<CR>
+"map <F8> :set expandtab tabstop=2 shiftwidth=2 softtabstop=2<CR>
+"
