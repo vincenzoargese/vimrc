@@ -1,116 +1,123 @@
-"""""""""""""""""""""""""""""
-" ViM - Impostazioni di base
-"""""""""""""""""""""""""""""
-set nocompatible            " Utilizza Vim in modalità avanzata
-set encoding=utf-8          " Imposta l'encoding a UTF-8
-syntax on                   " Abilita il syntax highlighting
-set mouse=a                 " Abilita il supporto per il mouse
-set tabstop=4               " Imposta la larghezza della tabulazione a 4 spazi
-set softtabstop=4           " Imposta la larghezza della tabulazione per il backspace a 4 spazi
-set shiftwidth=4            " Imposta la larghezza dello spostamento a 4 spazi
-set expandtab               " Usa spazi al posto delle tabulazioni
-set autoindent              " Abilita l'autoindentazione
-set smartindent             " Abilita l'indentazione intelligente
-"set number                  " Mostra il numero delle righe
-set cursorline              " Evidenzia la riga corrente
-set nowrap                  " Disabilita il wrapping delle righe
-set hlsearch                " Evidenzia le corrispondenze durante la ricerca
-set incsearch               " Evidenzia mentre si digita la ricerca
-syntax enable               " Abilita il syntax highlighting
-set background=dark         " Imposta lo sfondo scuro (cambia a light per sfondi chiari)
-colorscheme desert          " Imposta lo schema di colori (puoi scegliere altri temi)
+" --------------------------------------------------------------------
+" Author: Vincenzo Argese
+" Date: 2025-01-19
+" Version: 2.0
+" Web: https://www.vasystems.it
+" Link: https://github.com/vincenzoargese/vimrc
+" 
+" Description: 
+" This is my personal Vim configuration file.
+" It is a mix of plugins and settings that I have found useful over the years.
+" Nostalgic QBasic-style theme for '90s lovers. bringing back the classic look of good old QBasic!
+"
+" License:
+" This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
+" Anyone is free to improve this configuration and, if they wish, 
+" credit me as the original author.
+" --------------------------------------------------------------------
+
+" General Settings
+"-------------------------
+"set number
+"set relativenumber
+"set cursorline
+syntax on
+set showcmd
+set wildmenu
+set showmatch
+set tabstop=4
+set shiftwidth=4
+set expandtab
+filetype plugin indent on
+set mouse=a
 
 
-""""""""""""""""""""""""""""""""""""""""""
-" Vundle - Gestore dei Plugin
-" https://github.com/VundleVim/Vundle.vim
-""""""""""""""""""""""""""""""""""""""""""
+" VimPlug - Plugin Manager
+"------------------------------
+call plug#begin('~/.vim/plugged')
+
+Plug 'preservim/nerdtree'                           " A file explorer for quick navigation.
+Plug 'dense-analysis/ale'                           " For linting and real-time error handling.
+Plug 'neoclide/coc.nvim', {'branch': 'release'}     " Autocompletion and language support.
+Plug 'sheerun/vim-polyglot'                         " Multi-language support.
+Plug 'vim-airline/vim-airline'                      " Airline footer bar
+Plug 'vim-airline/vim-airline-themes'               " Airline themes
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " Search files and directories
+Plug 'junegunn/fzf.vim'                             " FZF support for ViM
+Plug 'tpope/vim-fugitive'                           " Git integration
+Plug 'tpope/vim-rhubarb'                            " Git repository navigation
+Plug 'airblade/vim-gitgutter'                       " Git realtive changes
+
+call plug#end()
+"--------------- End VimPlug
+
+" Vundle - Plugin Manager
+"-----------------------------
+set nocompatible
+filetype off
+
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 
-" Plugin
-Plugin 'scrooloose/nerdtree'      " NERDTree
-Plugin 'kien/ctrlp.vim'           " CtrlP
-Plugin 'vim-airline/vim-airline'  " vim-airline
-Plugin 'tpope/vim-fugitive'       " Fugitive
-Plugin 'dense-analysis/ale'       " Ale
-Plugin 'tpope/vim-surround'       " Surround
-Plugin 'SirVer/ultisnips'         " UltiSnips
-
-""""""""""""""""""""""""""""""""""""""""""""
-" YouCompleteMe
-" https://github.com/ycm-core/YouCompleteMe
-""""""""""""""""""""""""""""""""""""""""""""
-
-Plugin 'ycm-core/YouCompleteMe'   " YouCompleteMe
-
-""""""""""""""""""""
-" Plugin da testare
-""""""""""""""""""""
-"Plugin 'vim-scripts/C.vim'               " Syntax highlighting per C
-"Plugin 'pangloss/vim-javascript'         " Syntax highlighting per JavaScript
-"Plugin 'HerringtonDarkholme/yats.vim'    " Syntax highlighting per TypeScript
-"Plugin 'mxw/vim-jsx'                     " Syntax highlighting per JSX
-"Plugin 'othree/yajs.vim'                 " Syntax highlighting per ES6
-"Plugin 'pearofducks/ansible-vim'         " Syntax highlighting per Ansible
-"Plugin 'sheerun/vim-polyglot'            " Polyglot: supporto per vari linguaggi
-
+Plugin 'caglartoklu/qbcolor.vim'                  " Nostalgic QBasic-style theme for '90s lovers.
 
 call vundle#end()
-filetype plugin indent on       " Abilita i plugin e l'indentazione basata sul tipo di file
+filetype plugin indent on
+"--------------------------------------- End Vundle
 
-"""""""""""""""""""""""""""
-" YouCompleteMe - Settings
-"""""""""""""""""""""""""""
-" Default .ycm_extra_conf.py
-let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
-"
-"let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
+" QBasic colors
+"----------------
+colorscheme qbcolor
+set gfn=PxPlus_IBM_VGA9:h18:cANSI:qDRAFT
+let g:qbcolor_bg = "qb_blue"
 
-" Abilita l'autocompletamento per i linguaggi
-let g:ycm_semantic_triggers = {
-            \ 'c,cpp,java': ['->', '.'],
-            \ 'cs': ['.'],
-            \ 'javascript': ['.', '->'],
-            \ 'python': ['.'],
-            \ 'typescript': ['.'],
-            \ 'sql': ['.'],
-            \ 'mysql': ['.'],
-            \ 'html,html5': ['<', '>'],
-            \ 'sh,zsh': ['.'],
-            \ 'unity3d': ['.'],
-            \ 'MonoBehaviour': ['.'],
-            \ }
+" Airline bar configuration
+"----------------------------
+let g:airline#extensions#tabline#enabled = 1
 
-autocmd FileType c,cpp,cs,java,javascript,javascript.jsx,typescript,typescript.jsx,phaser3,unity3d,bash,zsh,sql,html,react,reactnative,jsx let g:ycm_semantic_triggers =  {'c,cpp': ['->', '.', ''], 'java': ['.', ''], 'javascript,javascript.jsx,typescript,typescript.jsx,phaser3,unity3d,react,reactnative,jsx': ['.', '']}
+function! ModeFull()
+  return {
+        \ 'n': 'Normal',
+        \ 'no': 'Operator Pending',
+        \ 'v': 'Visual',
+        \ 'V': 'Visual Line',
+        \ '^V': 'Visual Block',
+        \ 's': 'Select',
+        \ 'S': 'Select Line',
+        \ '^S': 'Select Block',
+        \ 'i': 'Insert',
+        \ 'R': 'Replace',
+        \ 'Rv': 'Virtual Replace',
+        \ 'c': 'Command',
+        \ 'cv': 'Vim Ex',
+        \ 'ce': 'Ex',
+        \ 'r': 'Hit-Enter',
+        \ 'rm': 'More',
+        \ 'r?': 'Confirm',
+        \ '!': 'Shell',
+        \ 't': 'Terminal'
+        \ }[mode()]
+endfunction
 
-" Impostazioni aggiuntive di YouCompleteMe per migliore performance
-let g:ycm_collect_identifiers_from_tags_files = 1
-let g:ycm_complete_in_comments = 1
-let g:ycm_key_invoke_completion = '<C-Space>'
+let g:airline_section_a = '%{ModeFull()}'                                     " Vim Mode
+let g:airline_section_b = '%{expand("%:p")}'                                  " File Path
+let g:airline_section_c = '%t'                                                " File Name
+let g:airline_section_x = '%{&filetype} | %{&fileformat} | %{&fileencoding}'  " Type, Format, encoding
+let g:airline_section_z = 'Ln %l/%L (%p%%) | Col %c'                          " Line/Total and Col
+let g:airline_theme='light'                                                   " Airline theme light
 
-" Riconoscimento dei file per vari linguaggi
-"au BufNewFile,BufRead *.py set filetype=python
-"au BufNewFile,BufRead *.cs set filetype=csharp
-"au BufNewFile,BufRead *.js,*.jsx set filetype=javascript
-"au BufNewFile,BufRead *.ts,*.tsx set filetype=typescript
-"au BufNewFile,BufRead *.java set filetype=java
-"au BufNewFile,BufRead *.sql set filetype=sql
-"au BufNewFile,BufRead *.xml set filetype=xml
-"au BufNewFile,BufRead *.sh set filetype=sh
-"au BufNewFile,BufRead *.zsh set filetype=zsh
-"au BufNewFile,BufRead *.c set filetype=c
-"au BufNewFile,BufRead *.cpp set filetype=cpp
-"
+" CoC Autocomple
+"-------------------
+set completeopt=menuone,noinsert,noselect
+let g:coc_global_extensions = ['coc-clangd', 'coc-python', 'coc-html', 'coc-css', 'coc-tsserver']
 
-"""""""""""""""""""""""""""
-" Keyboard Maps
-"""""""""""""""""""""""""""
-map <F2> :w<CR>            " Salva il file premendo F2
-map <C-S> :wq<CR>          " Salva e chiudi premendo CTRL+S
-" Python tabs map
-"map <F7> :set expandtab tabstop=4 shiftwidth=4 softtabstop=4<CR>
-"map <F8> :set expandtab tabstop=2 shiftwidth=2 softtabstop=2<CR>
-"
+" Github
+"-------------
+nnoremap <leader>gs :Gstatus<CR>
+nnoremap <leader>gc :Gcommit<CR>
+nnoremap <leader>gp :Gpush<CR>
+nnoremap <leader>gl :Gpull<CR>
+nnoremap <leader>gd :Gdiff<CR>
+nnoremap <leader>gb :Gbrowse<CR>
