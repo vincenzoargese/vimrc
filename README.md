@@ -6,10 +6,15 @@ Dear developers, IT professionals, and system administrators worldwide, this is 
 
 ## Introduction
 
+Welcome to my `.vimrc` project! This configuration file is designed to provide an efficient, customizable, and powerful environment for developers and system administrators. It supports a wide range of programming languages and includes features to optimize editing, coding, and navigating in ViM.
+
+**Special Feature**: This `.vimrc` includes the `QBColor` theme, inspired by QBasic for nostalgic fans of the 90s. However, the default theme is `One Dark`, which resembles GitHub's style for a more modern and comfortable development experience.
+
 The goal of this configuration is to have a powerful and customizable editor capable of meeting the needs of:
 
 - **Developers**: with support for C, C++, Python, HTML, CSS, and JavaScript.
 - **System Administrators**: for quick and comfortable editing of configuration files on Linux and macOS systems.
+- **Github and Copilot**: 
 
 I revised this configuration to overcome some issues with `YouCompleteMe` on Debian 12 stable and to make it even more complete and versatile.
 
@@ -32,10 +37,9 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ```
 
-#### Vundle
-
+#### Debian GNU/Linux
 ```bash
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+sudo apt install fonts-powerline
 ```
 
 ## Description of the `.vimrc` File
@@ -89,6 +93,11 @@ This configuration includes:
 - **CoC.nvim**: Autocompletion and language support.
   ```vim
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  ```
+
+  **Copilot**: Github Copilot Support
+  ```vim
+    Plug 'github/copilot.vim'                             " Github Copilot
   ```
 
 - **QBColor**: Nostalgic QBasic-style theme for '90s lovers.

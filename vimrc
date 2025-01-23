@@ -1,18 +1,23 @@
 " --------------------------------------------------------------------
 " Author: Vincenzo Argese
-" Date: 2025-01-19
-" Version: 2.0
 " Web: https://www.vasystems.it
 " Link: https://github.com/vincenzoargese/vimrc
-" 
-" Description: 
+"
+" Title: Vim Configuration File
+" Date: 2025-01-19
+"
+" Created: 2025-01-19
+" Updated: 2025-01-23
+" Version: 2.0
+"
+" Description:
 " This is my personal Vim configuration file.
 " It is a mix of plugins and settings that I have found useful over the years.
 " Nostalgic QBasic-style theme for '90s lovers. bringing back the classic look of good old QBasic!
 "
 " License:
 " This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
-" Anyone is free to improve this configuration and, if they wish, 
+" Anyone is free to improve this configuration and, if they wish,
 " credit me as the original author.
 " --------------------------------------------------------------------
 
@@ -41,7 +46,7 @@ set nowritebackup         " No backup file
 set noswapfile            " No file swap
 set hidden                " Buffer
 set updatetime=300        " Fast update
-set shortmess+=c          " No message 
+set shortmess+=c          " No message
 
 " VimPlug - Plugin Manager
 "------------------------------
@@ -59,25 +64,12 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-rhubarb'                              " Git repository navigation
   Plug 'airblade/vim-gitgutter'                         " Git realtive changes
   Plug 'joshdick/onedark.vim'                           " One Dark theme like Github Theme
+  Plug 'github/copilot.vim'                             " Github Copilot
+  Plug 'caglartoklu/qbcolor.vim'                        " Nostalgic QBasic-style theme for '90s lovers.
+
 
 call plug#end()
 "--------------- End VimPlug
-
-" Vundle - Plugin Manager
-"-----------------------------
-"set nocompatible
-"filetype off
-
-"set rtp+=~/.vim/bundle/Vundle.vim
-"call vundle#begin()
-
-"Plugin 'VundleVim/Vundle.vim'
-
-"Plugin 'caglartoklu/qbcolor.vim'            " Nostalgic QBasic-style theme for '90s lovers.
-
-"call vundle#end()
-"filetype plugin indent on
-"--------------------------------------- End Vundle
 
 " CoC Autocomple
 "-------------------
@@ -154,6 +146,7 @@ let g:ale_fix_on_save = 1
 "set gfn=PxPlus_IBM_VGA9:h18:cANSI:qDRAFT
 "let g:qbcolor_bg = "qb_blue"
 "let g:airline_theme='light'                " Airline theme light
+"let g:airline_powerline_fonts = 1          " Airline powerline fonts on
 
 " One Dark Theme like Github Theme
 "----------------------------------
@@ -176,33 +169,33 @@ let g:onedark_color_overrides = {
 
 " Airline One Dark Theme
 let g:airline_theme='onedark'
-let g:airline_powerline_fonts = 0
+let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 
-" Personalizzazioni aggiuntive di syntax highlighting
+" Syntax highlighting
 hi Comment cterm=italic gui=italic    " Coursive comments
-hi Search guibg=#3e4452 guifg=NONE    " Light search colore 
+hi Search guibg=#3e4452 guifg=NONE    " Light search colore
 hi Visual guibg=#3e4452               " Light visual search color
 hi CursorLine guibg=#2c313a           " Light line cursor color
 
-" Miglioramenti per specifici linguaggi
+" Improvements for specific languages
 augroup language_specific
     autocmd!
     " JavaScript/TypeScript
     autocmd FileType javascript,typescript hi jsFunction gui=italic
     autocmd FileType javascript,typescript hi jsArrowFunction gui=italic
-    
+
     " Python
     autocmd FileType python hi pythonFunction gui=italic
     autocmd FileType python hi pythonDecorator guifg=#c678dd gui=italic
-    
+
     " Markdown
     autocmd FileType markdown hi markdownHeadingDelimiter guifg=#e06c75
     autocmd FileType markdown hi markdownCode guifg=#56b6c2
 augroup END
 
-" Airline standard bar configuration
+" Airline bar configuration
 "--------------------------------------
 let g:airline#extensions#tabline#enabled = 1
 
