@@ -50,7 +50,7 @@ set shortmess+=c          " No message
 
 " VimPlug - Plugin Manager
 "------------------------------
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.vim/plugged')                       " call plug#begin('C:\Users\<user>\vimfiles\plugged')
 
   Plug 'preservim/nerdtree'                             " A file explorer for quick navigation.
   Plug 'dense-analysis/ale'                             " For linting and real-time error handling.
