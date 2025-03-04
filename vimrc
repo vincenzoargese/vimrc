@@ -104,7 +104,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'vim-airline/vim-airline-themes'                 " Themes for airline - https://github.com/vim-airline/vim-airline-themes
   Plug 'joshdick/onedark.vim'                           " One Dark theme - https://github.com/joshdick/onedark.vim
 
-  " AI & Copilot
+  " AI and Copilot
   Plug 'github/copilot.vim'                             " GitHub Copilot - https://github.com/github/copilot.vim
 
   " Nostalgic Theme
