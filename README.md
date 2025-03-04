@@ -8,8 +8,8 @@ Dear developers, IT professionals, and system administrators worldwide, this is 
 **Ah... I have disabled the ALE and Copilot plugins at startup. They are very convenient, but I find them quite intrusive, so I enable them only when needed or necessary.**
 
 You can enable them manually with the following commands (I prefer enable them when needed):
-:ALEEnable | ALEDisable
-:Copilot enable | disable
+- :ALEEnable | ALEDisable
+- :Copilot enable | disable
 
 ### Introduction
 
