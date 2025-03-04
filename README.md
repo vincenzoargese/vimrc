@@ -1,10 +1,17 @@
-# .vimrc
-Dear developers, IT professionals, and system administrators worldwide, this is my semi-final version of the `.vimrc` file, and I want to share it with everyone.
-
 ![ViM Logo](Vimlogo.svg.png)
 ![ViM Smile](vim_smile.png)
 
-### Foreword
+# .vimrc
+
+Dear developers, IT professionals, and system administrators worldwide, this is my semi-final version of the `.vimrc` file, and I want to share it with everyone.
+
+**Ah... I have disabled the ALE and Copilot plugins at startup. They are very convenient, but I find them quite intrusive, so I enable them only when needed or necessary.**
+
+You can enable them manually with the following commands (I prefer enable them when needed):
+:ALEEnable | ALEDisable
+:Copilot enable | disable
+
+### Introduction
 
 I have worked on this file for many years, in a rather disorganized and experimental way. I started using Debian in the winter of 1999, and since then, I have experimented with many editors for both fun and work. For a long time, I used Emacs, but for the past 24 years, I have exclusively used ViM. I barely remember the Emacs commands now, although I have promised myself to revisit it someday – old friends should not be abandoned.
 
