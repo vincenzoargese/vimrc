@@ -256,7 +256,7 @@ let g:airline#extensions#tabline#formatter = 'unique_tail'
 " If you want to enable them at startup, set the values to 1 or remove these lines.
 "
 " You can enable them manually with the following commands (I prefer enable them when needed):
-" :ALEEnable | ALEdisable
+" :ALEEnable | ALEDisable
 " :Copilot enable | disable
 let g:ale_enabled = 0
 let g:copilot_enabled = 0
