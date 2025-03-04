@@ -1,9 +1,4 @@
 # .vimrc
-
-ViM ...I'm lovin it
-
-Hello everyone, this is an open-source project where I share my `.vimrc` configuration file for ViM.
-
 Dear developers, IT professionals, and system administrators worldwide, this is my semi-final version of the `.vimrc` file, and I want to share it with everyone.
 
 ![ViM Logo](Vimlogo.svg.png)
