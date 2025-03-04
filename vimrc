@@ -63,11 +63,6 @@ set signcolumn=yes        " Show sign column
 
 filetype plugin indent on " Enable plugin support and indentation management for specific files
 
-<<<<<<< HEAD
-" VimPlug - Plugin Manager
-"------------------------------
-call plug#begin('~/.vim/plugged')                       " call plug#begin('C:\Users\<user>\vimfiles\plugged')
-=======
 " ========================
 " 3. Plugin Manager - VimPlug
 " ========================
@@ -86,7 +81,6 @@ call plug#begin('~/.vim/plugged')                       " call plug#begin('C:\Us
 " :PlugUpdate
 "
 call plug#begin('~/.vim/plugged')
->>>>>>> 153adcf (vimrc Improved! ;-))
 
   " File Navigation
   Plug 'preservim/nerdtree'                             " File explorer - https://github.com/preservim/nerdtree
