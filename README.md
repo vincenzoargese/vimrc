@@ -2,13 +2,22 @@
 
 ViM ...I'm lovin it
 
+Hello everyone, this is an open-source project where I share my `.vimrc` configuration file for ViM.
+
 Dear developers, IT professionals, and system administrators worldwide, this is my semi-final version of the `.vimrc` file, and I want to share it with everyone.
 
-## Introduction
+![ViM Logo](Vimlogo.svg.png)
+![ViM Smile](vim_smile.png)
 
-Welcome to my `.vimrc` project! This configuration file is designed to provide an efficient, customizable, and powerful environment for developers and system administrators. It supports a wide range of programming languages and includes features to optimize editing, coding, and navigating in ViM.
+### Foreword
 
-**Special Feature**: This `.vimrc` includes the `QBColor` theme, inspired by QBasic for nostalgic fans of the 90s. However, the default theme is `One Dark`, which resembles GitHub's style for a more modern and comfortable development experience.
+I have worked on this file for many years, in a rather disorganized and experimental way. I started using Debian in the winter of 1999, and since then, I have experimented with many editors for both fun and work. For a long time, I used Emacs, but for the past 24 years, I have exclusively used ViM. I barely remember the Emacs commands now, although I have promised myself to revisit it someday – old friends should not be abandoned.
+
+My goal was to have a fast and versatile editor, suitable for both software development and configuration file editing on Linux and Unix systems. I wanted a visually appealing workspace, with features such as autocomplete and auto-correction, along with all the modern conveniences like integration with Large Language Models for automated comment generation.
+
+After testing numerous plugins and configurations, I finally arrived at a `.vimrc` version that fully satisfies me. I chose the `One Dark` theme for its clarity, but I also installed a nostalgic theme that transforms ViM into a version inspired by the old QBasic – a tribute to the 90s, although less comfortable for everyday use.
+
+![QBasic Theme](Qbasic2.jpg)
 
 The goal of this configuration is to have a powerful and customizable editor capable of meeting the needs of:
 
@@ -19,106 +28,6 @@ The goal of this configuration is to have a powerful and customizable editor cap
 I revised this configuration to overcome some issues with `YouCompleteMe` on Debian 12 stable and to make it even more complete and versatile.
 
 > **Note:** A future TODO is to integrate OmniSharp and plugins for Unity3D, but for game development, I have fully embraced Godot and prefer to use its environment for GDscript.
-
-## Installation Guide
-
-### Create the ViM Directory
-
-```bash
-mkdir ~/.vim
-```
-
-### Install Plugin Managers
-
-#### VimPlug
-
-```bash
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-```
-
-#### Debian GNU/Linux
-```bash
-sudo apt install fonts-powerline
-```
-
-## Description of the `.vimrc` File
-
-This configuration includes:
-
-### General Settings
-
-- **Line Numbers**:
-  ```vim
-  set number
-  set relativenumber
-  ```
-  Displays line numbers and relative references to facilitate navigation.
-
-- **Visual Guidelines**:
-  ```vim
-  set cursorline
-  set showcmd
-  set showmatch
-  set wildmenu
-  ```
-  Improves text readability and navigation.
-
-- **Tabs and Spaces**:
-  ```vim
-  set tabstop=4
-  set shiftwidth=4
-  set expandtab
-  ```
-  Configures tab behavior to adhere to coding standards.
-
-- **Mouse Support**:
-  ```vim
-  set mouse=a
-  ```
-  Enables mouse support for navigating within ViM.
-
-### Supported Plugins (via VimPlug)
-
-- **NERDTree**: A file explorer for quick navigation.
-  ```vim
-  Plug 'preservim/nerdtree'
-  ```
-
-- **ALE**: For linting and real-time error handling.
-  ```vim
-  Plug 'dense-analysis/ale'
-  ```
-
-- **CoC.nvim**: Autocompletion and language support.
-  ```vim
-  Plug 'neoclide/coc.nvim', {'branch': 'release'}
-  ```
-
-  **Copilot**: Github Copilot Support
-  ```vim
-    Plug 'github/copilot.vim'                             " Github Copilot
-  ```
-
-- **QBColor**: Nostalgic QBasic-style theme for '90s lovers.
-  ```vim
-  Plug 'vim-scripts/qbcolor'
-  ```
-  This plugin transforms your ViM into a retro paradise, bringing back the classic look of good old QBasic!
-
-### Additional Customizations
-
-- **Syntax Highlighting**:
-  ```vim
-  syntax on
-  filetype plugin indent on
-  ```
-
-- **Optimized Performance**:
-  ```vim
-  set hidden
-  set history=1000
-  ```
 
 ## TODO
 
