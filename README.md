@@ -3,7 +3,7 @@
 
 # .vimrc
 
-Dear developers, IT professionals, and system administrators worldwide, this is my semi-final version of the `.vimrc` file, and I want to share it with everyone.
+Dear developers, IT professionals, and system administrators worldwide, this is my final version of the `.vimrc` file, and I want to share it with everyone.
 
 **Ah... I have disabled the ALE and Copilot plugins at startup. They are very convenient, but I find them quite intrusive, so I enable them only when needed or necessary.**
 
