@@ -31,7 +31,38 @@ I revised this configuration to overcome some issues with `YouCompleteMe` on Deb
 
 > **Note:** A future TODO is to integrate OmniSharp and plugins for Unity3D, but for game development, I have fully embraced Godot and prefer to use its environment for GDscript.
 
-## TODO
+# Installation Guide - Unix/Linux - Debian GNU/Linux ;-)
+This guide explains how to set up [Vim-Plug](https://github.com/junegunn/vim-plug) and install plugins using a custom `.vimrc` file.
+
+## 1. Install Vim-Plug
+
+Download the `plug.vim` file to the appropriate directory:
+
+```sh
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+```
+
+## Set Up .vimrc
+Download your `vimrc` [vimrc](https://github.com/vincenzoargese/vimrc/blob/beta/vimrc) file and move it to your home directory as .vimrc:
+
+```sh
+mv vimrc ~/.vimrc
+```
+
+## Install Plugins
+Open ViM and run the following command:
+
+```sh
+:PlugInstall
+```
+Alternatively, install the plugins directly from the command line:
+
+```sh
+vim -c 'PlugInstall'
+```
+
+# TODO
 
 - Integrate OmniSharp for Unity3D support.
 - Add specific configurations to enhance the Godot experience.
