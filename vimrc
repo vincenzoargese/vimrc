@@ -1,15 +1,15 @@
 " ===========================================
 " Vim Configuration File - Vincenzo Argese
-" https://www.vasystems.it | https://github.com/vincenzoargese/vimrc
+" https://www.vasystems.it | https://github.com/cr1s1um/vimrc
 " Author: Vincenzo Argese
-" Web: https://www.vasystems.it
-" X (Twitter): @VincenzoArgese
-" Link: https://github.com/vincenzoargese/vimrc
+" Web: https://www.vasystems.it (https://cr1s1um.github.io/)
+" X (Twitter): @cr1s1um
+" Link: https://github.com/cr1s1um/vimrc
 "
 " Title: Vim Configuration File
 "
 " Created: 2025-01-19
-" Updated: 2025-03-04
+" Updated: 2025-08-07
 " Version: 2.1
 "
 " Description:
