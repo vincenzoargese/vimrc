@@ -108,7 +108,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'github/copilot.vim'                             " GitHub Copilot - https://github.com/github/copilot.vim
 
   " Nostalgic Theme
-  Plug 'caglartoklu/qbcolor.vim'                        " QBasic-style nostalgic theme - https://github.com/caglartoklu/qbcolor.vim
+  "Plug 'caglartoklu/qbcolor.vim'                        " QBasic-style nostalgic theme - https://github.com/caglartoklu/qbcolor.vim
 
 call plug#end()
 
