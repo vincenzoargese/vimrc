@@ -10,6 +10,7 @@ Dear developers, IT professionals, and system administrators worldwide, this is 
 You can enable them manually with the following commands (I prefer enable them when needed):
 - :ALEEnable | ALEDisable
 - :Copilot enable | disable
+- let g:ale_fix_on_save = 1 -> 0
 
 ### Introduction
 
