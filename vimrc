@@ -191,7 +191,7 @@ let g:ale_fixers = {
 \   'javascript': ['prettier'],
 \   'typescript': ['prettier']
 \}
-let g:ale_fix_on_save = 1
+" let g:ale_fix_on_save = 1
 
 " ========================
 " 9. Language-Specific Improvements
