@@ -32,6 +32,7 @@ I revised this configuration to overcome some issues with `YouCompleteMe` on Deb
 
 > **Note:** A future TODO is to integrate OmniSharp and plugins for Unity3D, but for game development, I have fully embraced Godot and prefer to use its environment for GDscript.
 
+<<<<<<< HEAD
 # Installation Guide - Unix/Linux - Debian GNU/Linux ;-)
 This guide explains how to set up [Vim-Plug](https://github.com/junegunn/vim-plug) and install plugins using a custom `.vimrc` file.
 
@@ -64,6 +65,22 @@ vim -c 'PlugInstall'
 ```
 
 # TODO
+=======
+## Updated (2025-12-19):
+
+In this update, I commented out all the plugins and IDE-like features I previously used.
+They’re great projects, but if I’m honest, I almost never rely on them day to day.
+I prefer a “raw Vim + terminal” workflow: navigation, search, Git, and project management happen outside the editor.
+Today, with AI tools and agents, it’s also easier to recall syntax or get quick help on demand,
+without keeping a full autocomplete/linting stack running all the time.
+Keeping the setup lean makes Vim start faster, stay snappy, and feel more like Vim.
+Still enabled: the One Dark colorscheme and vim-airline (plus themes),
+because a pleasant workspace helps me stay focused and productive.
+Everything else is still in the file and simply commented out,
+so you can re-enable any feature whenever you actually need it.
+
+## TODO - Deprecated (2025-12-19)
+>>>>>>> d5e60b4 (Commented out most plugins and IDE features to speed up startup and keep Vim snappy. Left One Dark and vim-airline enabled; everything else remains in the config for easy re-enable.)
 
 - Integrate OmniSharp for Unity3D support.
 - Add specific configurations to enhance the Godot experience.

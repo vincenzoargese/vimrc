@@ -1,33 +1,16 @@
 " ===========================================
 " Vim Configuration File - Vincenzo Argese
-" https://www.vasystems.it | https://github.com/cr1s1um/vimrc
+" https://www.vasystems.it | https://github.com/vincenzoargese/vimrc
 " Author: Vincenzo Argese
-" Web: https://www.vasystems.it (https://cr1s1um.github.io/)
-" X (Twitter): @cr1s1um
-" Link: https://github.com/cr1s1um/vimrc
+" Web: https://www.vasystems.it
+" X (Twitter): @VincenzoArgese
+" Link: https://github.com/vincenzoargese/vimrc
 "
 " Title: Vim Configuration File
 "
 " Created: 2025-01-19
-<<<<<<< HEAD
-" Updated: 2025-08-07
+" Updated: 2025-03-04
 " Version: 2.1
-=======
-" Updated: 2025-12-19
-" Version: 2.2
-"
-" Updated:
-" In this update, I commented out all the plugins and IDE-like features I previously used.
-" They’re great projects, but if I’m honest, I almost never rely on them day to day.
-" I prefer a “raw Vim + terminal” workflow: navigation, search, Git, and project management happen outside the editor.
-" Today, with AI tools and agents, it’s also easier to recall syntax or get quick help on demand,
-" without keeping a full autocomplete/linting stack running all the time.
-" Keeping the setup lean makes Vim start faster, stay snappy, and feel more like Vim.
-" Still enabled: the One Dark colorscheme and vim-airline (plus themes),
-" because a pleasant workspace helps me stay focused and productive.
-" Everything else is still in the file and simply commented out,
-" so you can re-enable any feature whenever you actually need it.
->>>>>>> d5e60b4 (Commented out most plugins and IDE features to speed up startup and keep Vim snappy. Left One Dark and vim-airline enabled; everything else remains in the config for easy re-enable.)
 "
 " Description:
 " This is my personal Vim configuration file.
@@ -100,21 +83,21 @@ filetype plugin indent on " Enable plugin support and indentation management for
 call plug#begin('~/.vim/plugged')
 
   " File Navigation
-  "Plug 'preservim/nerdtree'                             " File explorer - https://github.com/preservim/nerdtree
-  "Plug 'junegunn/fzf', { 'do': './install --bin' }      " Fuzzy finder - https://github.com/junegunn/fzf.vim
-  "Plug 'junegunn/fzf.vim'                               " FZF support for Vim
+  Plug 'preservim/nerdtree'                             " File explorer - https://github.com/preservim/nerdtree
+  Plug 'junegunn/fzf', { 'do': './install --bin' }      " Fuzzy finder - https://github.com/junegunn/fzf.vim
+  Plug 'junegunn/fzf.vim'                               " FZF support for Vim
 
   " Code Analysis & Linting
-  "Plug 'dense-analysis/ale'                             " Linting and real-time error checking - https://github.com/dense-analysis/ale
-  "Plug 'neoclide/coc.nvim', {'branch': 'release'}       " Autocompletion and language support - https://github.com/neoclide/coc.nvim
+  Plug 'dense-analysis/ale'                             " Linting and real-time error checking - https://github.com/dense-analysis/ale
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}       " Autocompletion and language support - https://github.com/neoclide/coc.nvim
 
   " Language Support
-  "Plug 'sheerun/vim-polyglot'                           " Multi-language support - https://github.com/sheerun/vim-polyglot
+  Plug 'sheerun/vim-polyglot'                           " Multi-language support - https://github.com/sheerun/vim-polyglot
 
   " Git Integration
-  "Plug 'tpope/vim-fugitive'                             " Git commands - https://github.com/tpope/vim-fugitive
-  "Plug 'tpope/vim-rhubarb'                              " GitHub integration - https://github.com/tpope/vim-rhubarb
-  "Plug 'airblade/vim-gitgutter'                         " Git diff in sign column - https://github.com/airblade/vim-gitgutter
+  Plug 'tpope/vim-fugitive'                             " Git commands - https://github.com/tpope/vim-fugitive
+  Plug 'tpope/vim-rhubarb'                              " GitHub integration - https://github.com/tpope/vim-rhubarb
+  Plug 'airblade/vim-gitgutter'                         " Git diff in sign column - https://github.com/airblade/vim-gitgutter
 
   " UI Enhancements
   Plug 'vim-airline/vim-airline'                        " Status bar - https://github.com/vim-airline/vim-airline
@@ -122,10 +105,10 @@ call plug#begin('~/.vim/plugged')
   Plug 'joshdick/onedark.vim'                           " One Dark theme - https://github.com/joshdick/onedark.vim
 
   " AI and Copilot
-  "Plug 'github/copilot.vim'                             " GitHub Copilot - https://github.com/github/copilot.vim
+  Plug 'github/copilot.vim'                             " GitHub Copilot - https://github.com/github/copilot.vim
 
   " Nostalgic Theme
-  "Plug 'caglartoklu/qbcolor.vim'                        " QBasic-style nostalgic theme - https://github.com/caglartoklu/qbcolor.vim
+  Plug 'caglartoklu/qbcolor.vim'                        " QBasic-style nostalgic theme - https://github.com/caglartoklu/qbcolor.vim
 
 call plug#end()
 
@@ -135,24 +118,24 @@ call plug#end()
 " CoC is a plugin that provides autocompletion and language support for a variety of languages
 " It is highly customizable and can be configured to work with many extensions
 " CoC is a great tool to improve your productivity and speed up your workflow
-"set completeopt=menuone,noinsert,noselect
-"let g:coc_global_extensions = ['coc-clangd', 'coc-python', 'coc-html', 'coc-css', 'coc-tsserver']
+set completeopt=menuone,noinsert,noselect
+let g:coc_global_extensions = ['coc-clangd', 'coc-python', 'coc-html', 'coc-css', 'coc-tsserver']
 
 " Tab for autocomplete
-"inoremap <silent><expr> <TAB>
-"      \ coc#pum#visible() ? coc#pum#next(1) :
-"      \ CheckBackspace() ? "\<Tab>" :
-"      \ coc#refresh()
-"inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+inoremap <silent><expr> <TAB>
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ CheckBackspace() ? "\<Tab>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 
 " Confirm with Enter
-"inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
-"function! CheckBackspace() abort
-"  let col = col('.') - 1
-"  return !col || getline('.')[col - 1]  =~# '\s'
-"endfunction
+function! CheckBackspace() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
 
 " ========================
 " 5. Git Keybindings
@@ -161,12 +144,12 @@ call plug#end()
 " for working with Git repositories directly from Vim.
 " It is highly customizable and can be configured to work with many plugins.
 " Fugitive is a great tool to improve your productivity and speed up your workflow.
-"nnoremap <leader>gs :Gstatus<CR>
-"nnoremap <leader>gc :Gcommit<CR>
-"nnoremap <leader>gp :Gpush<CR>
-"nnoremap <leader>gl :Gpull<CR>
-"nnoremap <leader>gd :Gdiff<CR>
-"nnoremap <leader>gb :Gbrowse<CR>
+nnoremap <leader>gs :Gstatus<CR>
+nnoremap <leader>gc :Gcommit<CR>
+nnoremap <leader>gp :Gpush<CR>
+nnoremap <leader>gl :Gpull<CR>
+nnoremap <leader>gd :Gdiff<CR>
+nnoremap <leader>gb :Gbrowse<CR>
 
 " ========================
 " 6. NERDTree Keybindings
@@ -175,9 +158,9 @@ call plug#end()
 " and open files and directories directly from Vim.
 " It is highly customizable and can be configured to work with many plugins.
 " NERDTree is a great tool to improve your productivity and speed up your workflow.
-"nnoremap <C-n> :NERDTreeToggle<CR>
-"nnoremap <C-f> :NERDTreeFind<CR>
-"let NERDTreeShowHidden=1
+nnoremap <C-n> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
+let NERDTreeShowHidden=1
 
 " ========================
 " 7. FZF Configuration
@@ -185,10 +168,10 @@ call plug#end()
 " FZF is a fuzzy finder that can be used to search for files, buffers, and more.
 " It is highly customizable and can be configured to work with many plugins.
 " FZF is a great tool to improve your productivity and speed up your workflow.
-"nnoremap <C-p> :Files<CR>
-"nnoremap <C-g> :GFiles<CR>
-"nnoremap <leader>b :Buffers<CR>
-"nnoremap <leader>h :History<CR>
+nnoremap <C-p> :Files<CR>
+nnoremap <C-g> :GFiles<CR>
+nnoremap <leader>b :Buffers<CR>
+nnoremap <leader>h :History<CR>
 
 " ========================
 " 8. ALE Configuration (Linting)
@@ -197,18 +180,18 @@ call plug#end()
 " for a variety of languages.
 " It is highly customizable and can be configured to work with many linters.
 " Disabled at startup, see section 12 for more details.
-"let g:ale_linters = {
-"\   'python': ['pylint', 'flake8'],
-"\   'javascript': ['eslint'],
-"\   'typescript': ['eslint']
-"\}
-"let g:ale_fixers = {
-"\   '*': ['remove_trailing_lines', 'trim_whitespace'],
-"\   'python': ['black'],
-"\   'javascript': ['prettier'],
-"\   'typescript': ['prettier']
-"\}
-"let g:ale_fix_on_save = 1
+let g:ale_linters = {
+\   'python': ['pylint', 'flake8'],
+\   'javascript': ['eslint'],
+\   'typescript': ['eslint']
+\}
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'python': ['black'],
+\   'javascript': ['prettier'],
+\   'typescript': ['prettier']
+\}
+" let g:ale_fix_on_save = 1
 
 " ========================
 " 9. Language-Specific Improvements
@@ -217,15 +200,15 @@ call plug#end()
 " JavaScript and TypeScript
 " Python
 " Markdown
-"augroup language_specific
-"    autocmd!
-"    autocmd FileType javascript,typescript hi jsFunction gui=italic
-"    autocmd FileType javascript,typescript hi jsArrowFunction gui=italic
-"    autocmd FileType python hi pythonFunction gui=italic
-"    autocmd FileType python hi pythonDecorator guifg=#c678dd gui=italic
-"    autocmd FileType markdown hi markdownHeadingDelimiter guifg=#e06c75
-"    autocmd FileType markdown hi markdownCode guifg=#56b6c2
-"augroup END
+augroup language_specific
+    autocmd!
+    autocmd FileType javascript,typescript hi jsFunction gui=italic
+    autocmd FileType javascript,typescript hi jsArrowFunction gui=italic
+    autocmd FileType python hi pythonFunction gui=italic
+    autocmd FileType python hi pythonDecorator guifg=#c678dd gui=italic
+    autocmd FileType markdown hi markdownHeadingDelimiter guifg=#e06c75
+    autocmd FileType markdown hi markdownCode guifg=#56b6c2
+augroup END
 
 " ========================
 " 10. Theme & Visual Enhancements
@@ -275,5 +258,5 @@ let g:airline#extensions#tabline#formatter = 'unique_tail'
 " You can enable them manually with the following commands (I prefer enable them when needed):
 " :ALEEnable | ALEDisable
 " :Copilot enable | disable
-"let g:ale_enabled = 0
-"let g:copilot_enabled = 0
+let g:ale_enabled = 0
+let g:copilot_enabled = 0
